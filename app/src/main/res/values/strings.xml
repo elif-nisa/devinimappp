@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">devinimappp</string>
-
+    <string name="motivasyon_aciklama">Motivasyon acıklama </string>
+    <string name="alinti_aciklama">Kitaplardan alıntılar acıklama </string>
+    <string name="dusunurler_aciklama">Düşünürler acıklama </string>
+    <string name="sarkilar_aciklama">Şarkılardan alıntılar acıklama </string>
 </resources>

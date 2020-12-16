@@ -31,8 +31,8 @@
 
     <TextView
         android:id="@+id/aciklama"
-        android:layout_width="357dp"
-        android:layout_height="102dp"
+        android:layout_width="326dp"
+        android:layout_height="115dp"
         android:layout_marginTop="32dp"
         android:text="Seni aramızda görmek ne güzel! Hadi şimdi aşağıdan
 bir konu seç. Daha sonra her saat başı bu konuyla alakalı bildirimlerin
@@ -40,5 +40,102 @@ gelmeye başlasın!"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="@id/tvName"
         app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+    <Button
+        android:id="@+id/motivasyonBtn"
+        android:layout_width="152dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="28dp"
+        android:text="MOTİVASYON"
+        app:backgroundTint="#182678"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aciklama" />
+
+    <Button
+        android:id="@+id/alintiBtn"
+        android:layout_width="152dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="28dp"
+        android:text="Kitaplardan Alıntılar"
+        app:backgroundTint="#182678"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toEndOf="@+id/motivasyonBtn"
+        app:layout_constraintTop_toBottomOf="@+id/aciklama" />
+
+    <Button
+        android:id="@+id/dusunurlerBtn"
+        android:layout_width="152dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
+        android:text="Ünlü Düşünürlerden Sözler"
+        android:textSize="12dp"
+        app:backgroundTint="#182678"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/motivasyonBtn" />
+
+    <Button
+        android:id="@+id/sarkilarBtn"
+        android:layout_width="152dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
+        android:text="Şarkılardan Alıntılar"
+        app:backgroundTint="#182678"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.293"
+        app:layout_constraintStart_toEndOf="@+id/dusunurlerBtn"
+        app:layout_constraintTop_toBottomOf="@+id/alintiBtn" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="152dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
+        android:text="Button"
+        app:backgroundTint="#182678"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dusunurlerBtn" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="152dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
+        android:text="Button"
+        app:backgroundTint="#182678"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.306"
+        app:layout_constraintStart_toEndOf="@+id/button4"
+        app:layout_constraintTop_toBottomOf="@+id/sarkilarBtn" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="152dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
+        android:text="Button"
+        app:backgroundTint="#182678"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="152dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
+        android:text="Button"
+        app:backgroundTint="#182678"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.306"
+        app:layout_constraintStart_toEndOf="@+id/button6"
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
