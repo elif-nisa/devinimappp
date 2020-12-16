@@ -2,11 +2,15 @@ package com.elifnisa.devinimappp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class welcome extends AppCompatActivity {
+public class welcome extends AppCompatActivity implements View.OnClickListener {
    private TextView tvHello,tvName,aciklama;
+   private Button motivasyonBtn,alintiBtn,dusunurlerBtn,sarkilarBtn;
    private String strName;
 
     @Override
@@ -17,5 +21,56 @@ public class welcome extends AppCompatActivity {
         Bundle bundle= getIntent().getExtras();
         strName = bundle.getString("NAME");
         tvName.setText(strName);
+
+        motivasyonBtn=(Button) findViewById(R.id.motivasyonBtn);
+        motivasyonBtn.setOnClickListener(this);
+
+        alintiBtn=(Button) findViewById(R.id.alintiBtn);
+        alintiBtn.setOnClickListener(this::onClickSecond);
+
+        dusunurlerBtn=(Button) findViewById(R.id.dusunurlerBtn);
+        dusunurlerBtn.setOnClickListener(this::onClickThird);
+
+        sarkilarBtn=(Button) findViewById(R.id.sarkilarBtn);
+        sarkilarBtn.setOnClickListener(this::onClickFourth);
     }
+
+     @Override
+    public void onClick(View v) {
+    goToMotivasyon();
+    }
+
+    private void goToMotivasyon() {
+        Intent intent = new Intent(this, motivasyon.class);
+        startActivity(intent);
+    }
+
+    private void onClickSecond(View view) {
+    goToAlinti();
+    }
+
+    private void goToAlinti() {
+        Intent intent = new Intent(this, alinti.class);
+        startActivity(intent);
+    }
+
+    private void onClickThird(View view) {
+        goToDusunurler();
+    }
+
+    private void goToDusunurler() {
+        Intent intent = new Intent(this, dusunurler.class);
+        startActivity(intent);
+    }
+
+    private void onClickFourth(View view) {
+        goToSarkilar();
+    }
+
+    private void goToSarkilar() {
+        Intent intent = new Intent(this, sarkilar.class);
+        startActivity(intent);
+    }
+
+
 }
