@@ -17,17 +17,19 @@
         android:textSize="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.095" />
+        app:layout_constraintVertical_bias="0.089" />
 
     <TextView
         android:id="@+id/aciklamaa"
-        android:layout_width="294dp"
-        android:layout_height="490dp"
+        android:layout_width="316dp"
+        android:layout_height="336dp"
         android:layout_marginTop="32dp"
         android:text="@string/motivasyon_aciklama"
         android:textColor="@color/black"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
