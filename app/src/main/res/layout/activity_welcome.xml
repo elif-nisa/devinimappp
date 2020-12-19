@@ -31,12 +31,13 @@
 
     <TextView
         android:id="@+id/aciklama"
-        android:layout_width="326dp"
-        android:layout_height="115dp"
+        android:layout_width="328dp"
+        android:layout_height="128dp"
         android:layout_marginTop="32dp"
         android:text="Seni aramızda görmek ne güzel! Hadi şimdi aşağıdan
 bir konu seç. Daha sonra her saat başı bu konuyla alakalı bildirimlerin
 gelmeye başlasın!"
+        android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="@id/tvName"
         app:layout_constraintTop_toBottomOf="@id/tvName" />
@@ -91,11 +92,11 @@ gelmeye başlasın!"
         app:layout_constraintTop_toBottomOf="@+id/alintiBtn" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/burclarBtn"
         android:layout_width="152dp"
         android:layout_height="62dp"
         android:layout_marginTop="16dp"
-        android:text="Button"
+        android:text="Burçlar"
         app:backgroundTint="#182678"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.123"
@@ -111,7 +112,7 @@ gelmeye başlasın!"
         app:backgroundTint="#182678"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.306"
-        app:layout_constraintStart_toEndOf="@+id/button4"
+        app:layout_constraintStart_toEndOf="@+id/burclarBtn"
         app:layout_constraintTop_toBottomOf="@+id/sarkilarBtn" />
 
     <Button
@@ -124,7 +125,7 @@ gelmeye başlasın!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/burclarBtn" />
 
     <Button
         android:id="@+id/button7"

@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class welcome extends AppCompatActivity implements View.OnClickListener {
    private TextView tvHello,tvName,aciklama;
-   private Button motivasyonBtn,alintiBtn,dusunurlerBtn,sarkilarBtn;
+   private Button motivasyonBtn,alintiBtn,dusunurlerBtn,sarkilarBtn,burclarBtn;
    private String strName;
 
     @Override
@@ -33,9 +33,12 @@ public class welcome extends AppCompatActivity implements View.OnClickListener {
 
         sarkilarBtn=(Button) findViewById(R.id.sarkilarBtn);
         sarkilarBtn.setOnClickListener(this::onClickFourth);
+
+        burclarBtn=(Button) findViewById(R.id.burclarBtn);
+        burclarBtn.setOnClickListener(this::onClickFifth);
     }
 
-     @Override
+    @Override
     public void onClick(View v) {
     goToMotivasyon();
     }
@@ -69,6 +72,15 @@ public class welcome extends AppCompatActivity implements View.OnClickListener {
 
     private void goToSarkilar() {
         Intent intent = new Intent(this, sarkilar.class);
+        startActivity(intent);
+    }
+
+    private void onClickFifth(View view) {
+        goToBurclar();
+    }
+
+    private void goToBurclar() {
+        Intent intent = new Intent(this, burclar.class);
         startActivity(intent);
     }
 

@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Devinimappp">
-        <activity android:name=".sarkilar"></activity>
+        <meta-data
+            android:name="push_kit_auto_init_enabled"
+            android:value="true" />
+        <activity android:name=".burclar"></activity>
+        <activity android:name=".sarkilar" />
         <activity android:name=".dusunurler" />
         <activity android:name=".alinti" />
         <activity android:name=".motivasyon" />
@@ -21,6 +25,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <service
+            android:name=".MyPushService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.huawei.push.action.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
 </manifest>
