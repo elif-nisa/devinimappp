@@ -18,29 +18,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textColor="#182678"
-        android:textSize="32sp"
-        app:layout_constraintStart_toStartOf="@id/tvHello"
-        app:layout_constraintTop_toBottomOf="@id/tvHello"
-        tools:text="Elif Nisa" />
 
     <TextView
         android:id="@+id/aciklama"
         android:layout_width="328dp"
         android:layout_height="128dp"
-        android:layout_marginTop="32dp"
         android:text="Seni aramızda görmek ne güzel! Hadi şimdi aşağıdan
 bir konu seç. Daha sonra her saat başı bu konuyla alakalı bildirimlerin
 gelmeye başlasın!"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="@id/tvName"
-        app:layout_constraintTop_toBottomOf="@id/tvName" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHello"
+        app:layout_constraintVertical_bias="0.086" />
 
     <Button
         android:id="@+id/motivasyonBtn"
@@ -138,5 +131,18 @@ gelmeye başlasın!"
         app:layout_constraintHorizontal_bias="0.306"
         app:layout_constraintStart_toEndOf="@+id/button6"
         app:layout_constraintTop_toBottomOf="@+id/button5" />
+
+    <Button
+        android:id="@+id/cikisBtn"
+        android:layout_width="100dp"
+        android:layout_height="54dp"
+        android:text="Çıkış Yap"
+        app:backgroundTint="#182678"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.948"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
