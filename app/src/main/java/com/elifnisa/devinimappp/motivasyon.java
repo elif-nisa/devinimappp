@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hmf.tasks.OnCompleteListener;
 import com.huawei.hmf.tasks.Task;
@@ -35,22 +37,32 @@ public class motivasyon extends AppCompatActivity implements View.OnClickListene
         motivasyonSecBtn=(Button) findViewById(R.id.motivasyonSecBtn);
         motivasyonSecBtn.setOnClickListener(this);
 
-
     }
 
     @Override
     public void onClick(View v) {
+        subscribe(motivasyon);
 
+       if (v.getId()==R.id.motivasyonSecBtn) {
+           Context context = getApplicationContext();
+           CharSequence text = "Motivasyon seçildi!";
+           int duration = Toast.LENGTH_SHORT;
+
+           Toast toast = Toast.makeText(context, text, duration);
+           toast.show();
+       }
     }
-    public void subscribe(String motivasyon) {
+
+    private void subscribe(String motivasyon) {
         try {
 
-            HmsMessaging.getInstance(context).subscribe(motivasyon)
+            HmsMessaging.getInstance(this.getApplicationContext()).subscribe(motivasyon)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(Task<Void> task) {
                             if (task.isSuccessful()) {
                                 Log.i(TAG, "subscribe Complete");
+
                             } else {
                                 Log.e(TAG, "subscribe failed: ret=" + task.getException().getMessage());
                             }
@@ -59,5 +71,20 @@ public class motivasyon extends AppCompatActivity implements View.OnClickListene
         } catch (Exception e) {
             Log.e(TAG, "subscribe failed: exception=" + e.getMessage());
         }
+
+        HmsMessaging.getInstance(this.getApplicationContext()).turnOnPush()
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Log.i(TAG, "turnOnPush Complete");
+                        } else {
+                            Log.e(TAG, "turnOnPush failed: cause=" + task.getException().getMessage());
+                        }
+                    }
+                });
     }
+
+
 }
+
