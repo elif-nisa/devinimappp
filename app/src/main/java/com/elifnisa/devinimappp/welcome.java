@@ -8,19 +8,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.huawei.agconnect.auth.AGConnectAuth;
+
 public class welcome extends AppCompatActivity implements View.OnClickListener {
    private TextView tvHello,tvName,aciklama;
-   private Button motivasyonBtn,alintiBtn,dusunurlerBtn,sarkilarBtn,burclarBtn;
+   private Button motivasyonBtn,alintiBtn,dusunurlerBtn,sarkilarBtn,burclarBtn,cikisBtn;
    private String strName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        tvName =(TextView)findViewById(R.id.tvName);
-        Bundle bundle= getIntent().getExtras();
-        strName = bundle.getString("NAME");
-        tvName.setText(strName);
+
+
 
         motivasyonBtn=(Button) findViewById(R.id.motivasyonBtn);
         motivasyonBtn.setOnClickListener(this);
@@ -36,6 +36,15 @@ public class welcome extends AppCompatActivity implements View.OnClickListener {
 
         burclarBtn=(Button) findViewById(R.id.burclarBtn);
         burclarBtn.setOnClickListener(this::onClickFifth);
+
+        cikisBtn=(Button) findViewById(R.id.cikisBtn);
+        cikisBtn.setOnClickListener(this::onClickcikisBtn);
+    }
+
+    private void onClickcikisBtn(View view) {
+        AGConnectAuth.getInstance().signOut();
+        startActivity(new Intent(welcome.this, MainActivity.class));
+        finish();
     }
 
     @Override
