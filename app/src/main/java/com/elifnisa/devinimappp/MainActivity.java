@@ -1,6 +1,5 @@
 package com.elifnisa.devinimappp;
-
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -11,7 +10,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.huawei.agconnect.auth.AGConnectAuth;
 import com.huawei.agconnect.auth.AGConnectAuthCredential;
 import com.huawei.agconnect.auth.HwIdAuthProvider;
@@ -34,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button login,anonimGirisBtn;
     private String TAG;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         anonimGirisBtn.setOnClickListener(this::anonimGiris);
         login=(Button) findViewById(R.id.LoginBtn);
         login.setOnClickListener(this);
-
     }
 
     private void anonimGiris(View view) {
@@ -69,7 +68,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         onStart();
     }
 
-
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1001) {
@@ -78,18 +76,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 AuthHuaweiId huaweiAccount = authHuaweiIdTask.getResult();
                 Log.i(TAG, "signIn success Access Token = " + huaweiAccount.getAccessToken());
                 Log.i(TAG, "signIn success User Name = " + huaweiAccount.getDisplayName());
+                onStart();
             } else {
                 Log.i(TAG, "signIn failed: " + ((ApiException) authHuaweiIdTask.getException()).getStatusCode());
             }
         }
     }
+
     private void transmitTokenIntoAppGalleryConnect(String accessToken) {
         AGConnectAuthCredential credential = HwIdAuthProvider.credentialWithToken(accessToken);
         AGConnectAuth.getInstance().signIn(credential).addOnSuccessListener(new OnSuccessListener<SignInResult>() {
             @Override
             public void onSuccess(SignInResult signInResult) {
                 startActivity(new Intent(MainActivity.this, welcome.class));
-                finish();
+                onStart();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
+
     protected void onStart() {
         super.onStart();
         if (AGConnectAuth.getInstance().getCurrentUser() != null) {
@@ -105,6 +106,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             finish();
         }
     }
-
-
 }

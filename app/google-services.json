@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "432073793215",
+    "project_id": "devinimappp",
+    "storage_bucket": "devinimappp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432073793215:android:35b19b8f9c5939976b700a",
+        "android_client_info": {
+          "package_name": "com.elifnisa.devinimappp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432073793215-1dhvmp04i65o4h8d4pqia97q16ijql4h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMLLD9M84Mq741dAiAqeHsEpiu5c_RBzY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432073793215-1dhvmp04i65o4h8d4pqia97q16ijql4h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

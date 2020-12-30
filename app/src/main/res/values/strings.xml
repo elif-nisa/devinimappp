@@ -4,8 +4,13 @@
         En beklenmedik işler yapılabilir. Yeter ki doğru motivasyon sağlansın. Yapılacak işin başarılacağına inanılsın.
         İnanç başarı için en belirleyici özelliklerin başında gelir. Başarıya inanılmıyorsa başarmak bir mucizedir.<br></br> <br></br>
         Eğer motivasyona ihtiyacın varsa, DEVINIM sana  gün içerisinde bir saat aralıklarla seni motive edecek sözler gönderecek. </string>
-    <string name="alinti_aciklama">Kitaplar</string>
+    <string name="alinti_aciklama">"Kitap, ruhun ilacıdır." demişler.Gün içerisinde kitap okumaya vakit ayıramıyorsan, üzülme.
+    DEVINIM gün içerisinde sana kitaplardan alıntılar yapacak.</string>
     <string name="dusunurler_aciklama">Düşünürler acıklama </string>
     <string name="sarkilar_aciklama">Şarkılardan alıntılar acıklama </string>
     <string name="burclar_aciklama">Burclar acıklama </string>
+    <string name="welcome_aciklama">Seni aramızda görmek ne güzel! Hadi şimdi aşağıdan bir konu seç. Daha sonra bu konuyla alakalı bildirimlerin gelmeye başlasın!</string>
+    <string name="ego_aciklama">Açıklama </string>
+    <string name="msg_subscribed">Seçildi :D</string>
+    <string name="msg_subscribe_failed">Üzgünüm, seçilemedi :(</string>
 </resources>

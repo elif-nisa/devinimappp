@@ -1,5 +1,4 @@
 package com.elifnisa.devinimappp;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,15 +11,13 @@ import com.huawei.agconnect.auth.AGConnectAuth;
 
 public class welcome extends AppCompatActivity implements View.OnClickListener {
    private TextView tvHello,tvName,aciklama;
-   private Button motivasyonBtn,alintiBtn,dusunurlerBtn,sarkilarBtn,burclarBtn,cikisBtn;
+   private Button motivasyonBtn,alintiBtn,dusunurlerBtn,sarkilarBtn,burclarBtn,cikisBtn,ego_btn;
    private String strName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-
-
 
         motivasyonBtn=(Button) findViewById(R.id.motivasyonBtn);
         motivasyonBtn.setOnClickListener(this);
@@ -37,8 +34,20 @@ public class welcome extends AppCompatActivity implements View.OnClickListener {
         burclarBtn=(Button) findViewById(R.id.burclarBtn);
         burclarBtn.setOnClickListener(this::onClickFifth);
 
+        ego_btn=(Button)  findViewById(R.id.ego_btn);
+        ego_btn.setOnClickListener(this::onClickSixth);
+
         cikisBtn=(Button) findViewById(R.id.cikisBtn);
         cikisBtn.setOnClickListener(this::onClickcikisBtn);
+    }
+
+    private void onClickSixth(View view) {
+        goToEgo();
+    }
+
+    private void goToEgo() {
+        Intent intent = new Intent(this, ego.class);
+        startActivity(intent);
     }
 
     private void onClickcikisBtn(View view) {
@@ -49,10 +58,6 @@ public class welcome extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-    goToMotivasyon();
-    }
-
-    private void goToMotivasyon() {
         Intent intent = new Intent(this, motivasyon.class);
         startActivity(intent);
     }

@@ -3,13 +3,18 @@ package com.elifnisa.devinimappp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class burclar extends AppCompatActivity implements View.OnClickListener {
     private TextView baslik,aciklamaa;
+    private static final String TAG = "burclar";
     private ImageButton ariesBtn,aquariusBtn,cancerBtn,capricornBtn,geminiBtn,leoBtn,libraBtn,piscesBtn,sagittariusBtn,scorpioBtn,taurusBtn,virgoBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,51 +61,147 @@ public class burclar extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void onClickVirgo(View view) {
-
+        FirebaseMessaging.getInstance().subscribeToTopic("virgo" )
+                .addOnCompleteListener((com.google.android.gms.tasks.OnCompleteListener<Void>) task -> {
+                    String msg = getString(R.string.msg_subscribed);
+                    if (!task.isSuccessful()) {
+                        msg = getString(R.string.msg_subscribe_failed);
+                    }
+                    Log.d(TAG, msg);
+                    Toast.makeText(burclar.this, msg, Toast.LENGTH_SHORT).show();
+                });
     }
 
     private void onClickTaurus(View view) {
-
+        FirebaseMessaging.getInstance().subscribeToTopic("taurus" )
+                .addOnCompleteListener((com.google.android.gms.tasks.OnCompleteListener<Void>) task -> {
+                    String msg = getString(R.string.msg_subscribed);
+                    if (!task.isSuccessful()) {
+                        msg = getString(R.string.msg_subscribe_failed);
+                    }
+                    Log.d(TAG, msg);
+                    Toast.makeText(burclar.this, msg, Toast.LENGTH_SHORT).show();
+                });
     }
 
     private void onClickScorpio(View view) {
-
+        FirebaseMessaging.getInstance().subscribeToTopic("scorpio" )
+                .addOnCompleteListener((com.google.android.gms.tasks.OnCompleteListener<Void>) task -> {
+                    String msg = getString(R.string.msg_subscribed);
+                    if (!task.isSuccessful()) {
+                        msg = getString(R.string.msg_subscribe_failed);
+                    }
+                    Log.d(TAG, msg);
+                    Toast.makeText(burclar.this, msg, Toast.LENGTH_SHORT).show();
+                });
     }
 
     private void onClickSagittarius(View view) {
-
+        FirebaseMessaging.getInstance().subscribeToTopic("sagittarius" )
+                .addOnCompleteListener((com.google.android.gms.tasks.OnCompleteListener<Void>) task -> {
+                    String msg = getString(R.string.msg_subscribed);
+                    if (!task.isSuccessful()) {
+                        msg = getString(R.string.msg_subscribe_failed);
+                    }
+                    Log.d(TAG, msg);
+                    Toast.makeText(burclar.this, msg, Toast.LENGTH_SHORT).show();
+                });
     }
 
     private void onClickPisces(View view) {
-
+        FirebaseMessaging.getInstance().subscribeToTopic("pisces" )
+                .addOnCompleteListener((com.google.android.gms.tasks.OnCompleteListener<Void>) task -> {
+                    String msg = getString(R.string.msg_subscribed);
+                    if (!task.isSuccessful()) {
+                        msg = getString(R.string.msg_subscribe_failed);
+                    }
+                    Log.d(TAG, msg);
+                    Toast.makeText(burclar.this, msg, Toast.LENGTH_SHORT).show();
+                });
     }
 
     private void onClickLibra(View view) {
-
+        FirebaseMessaging.getInstance().subscribeToTopic("libra" )
+                .addOnCompleteListener((com.google.android.gms.tasks.OnCompleteListener<Void>) task -> {
+                    String msg = getString(R.string.msg_subscribed);
+                    if (!task.isSuccessful()) {
+                        msg = getString(R.string.msg_subscribe_failed);
+                    }
+                    Log.d(TAG, msg);
+                    Toast.makeText(burclar.this, msg, Toast.LENGTH_SHORT).show();
+                });
     }
 
     private void onClickLeo(View view) {
-
+        FirebaseMessaging.getInstance().subscribeToTopic("leo" )
+                .addOnCompleteListener((com.google.android.gms.tasks.OnCompleteListener<Void>) task -> {
+                    String msg = getString(R.string.msg_subscribed);
+                    if (!task.isSuccessful()) {
+                        msg = getString(R.string.msg_subscribe_failed);
+                    }
+                    Log.d(TAG, msg);
+                    Toast.makeText(burclar.this, msg, Toast.LENGTH_SHORT).show();
+                });
     }
 
     private void onClickGemini(View view) {
-
+        FirebaseMessaging.getInstance().subscribeToTopic("gemini" )
+                .addOnCompleteListener((com.google.android.gms.tasks.OnCompleteListener<Void>) task -> {
+                    String msg = getString(R.string.msg_subscribed);
+                    if (!task.isSuccessful()) {
+                        msg = getString(R.string.msg_subscribe_failed);
+                    }
+                    Log.d(TAG, msg);
+                    Toast.makeText(burclar.this, msg, Toast.LENGTH_SHORT).show();
+                });
     }
 
     private void onClickCapricorn(View view) {
-
+        FirebaseMessaging.getInstance().subscribeToTopic("capricorn" )
+                .addOnCompleteListener((com.google.android.gms.tasks.OnCompleteListener<Void>) task -> {
+                    String msg = getString(R.string.msg_subscribed);
+                    if (!task.isSuccessful()) {
+                        msg = getString(R.string.msg_subscribe_failed);
+                    }
+                    Log.d(TAG, msg);
+                    Toast.makeText(burclar.this, msg, Toast.LENGTH_SHORT).show();
+                });
     }
 
     private void onClickCancer(View view) {
-
+        FirebaseMessaging.getInstance().subscribeToTopic("cancer" )
+                .addOnCompleteListener((com.google.android.gms.tasks.OnCompleteListener<Void>) task -> {
+                    String msg = getString(R.string.msg_subscribed);
+                    if (!task.isSuccessful()) {
+                        msg = getString(R.string.msg_subscribe_failed);
+                    }
+                    Log.d(TAG, msg);
+                    Toast.makeText(burclar.this, msg, Toast.LENGTH_SHORT).show();
+                });
     }
 
     private void onClickAquarius(View view) {
-
+        FirebaseMessaging.getInstance().subscribeToTopic("aquarius" )
+                .addOnCompleteListener((com.google.android.gms.tasks.OnCompleteListener<Void>) task -> {
+                    String msg = getString(R.string.msg_subscribed);
+                    if (!task.isSuccessful()) {
+                        msg = getString(R.string.msg_subscribe_failed);
+                    }
+                    Log.d(TAG, msg);
+                    Toast.makeText(burclar.this, msg, Toast.LENGTH_SHORT).show();
+                });
     }
 
     @Override
     public void onClick(View v) {
-
+        FirebaseMessaging.getInstance().subscribeToTopic("aries" )
+                .addOnCompleteListener((com.google.android.gms.tasks.OnCompleteListener<Void>) task -> {
+                    String msg = getString(R.string.msg_subscribed);
+                    if (!task.isSuccessful()) {
+                        msg = getString(R.string.msg_subscribe_failed);
+                    }
+                    Log.d(TAG, msg);
+                    Toast.makeText(burclar.this, msg, Toast.LENGTH_SHORT).show();
+                });
     }
 }

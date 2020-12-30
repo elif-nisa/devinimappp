@@ -5,26 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#B1CFFB"
-    tools:context=".alinti">
+    tools:context=".ego">
     <TextView
         android:id="@+id/baslik"
         android:layout_width="333dp"
         android:layout_height="63dp"
-        android:text="Kitaplardan Alıntılar"
+        android:text="DEVINIM ile Özel Hisset"
         android:textColor="#182678"
-        android:textSize="38dp"
+        android:textSize="31dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.095" />
+        app:layout_constraintVertical_bias="0.089" />
 
     <TextView
         android:id="@+id/aciklamaa"
-        android:layout_width="312dp"
-        android:layout_height="187dp"
+        android:layout_width="316dp"
+        android:layout_height="336dp"
         android:layout_marginTop="32dp"
-        android:text="@string/alinti_aciklama"
+        android:text="@string/ego_aciklama"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,7 +36,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/alintiSecBtn"
+        android:id="@+id/egoSecBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SEÇ"
@@ -43,8 +44,7 @@
         app:backgroundTint="#182678"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aciklamaa"
-        app:layout_constraintVertical_bias="0.772" />
+        app:layout_constraintTop_toBottomOf="@+id/aciklamaa" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
