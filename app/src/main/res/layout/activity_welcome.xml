@@ -6,41 +6,41 @@
     android:layout_height="match_parent"
     android:background="#B1CFFB"
     tools:context=".welcome">
+
+
     <TextView
         android:id="@+id/tvHello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="64dp"
         android:text="DEVINIM'e Hoşgeldin,"
         android:textColor="@color/black"
         android:textSize="27sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
         android:id="@+id/aciklama"
         android:layout_width="328dp"
         android:layout_height="128dp"
-        android:text="Seni aramızda görmek ne güzel! Hadi şimdi aşağıdan
-bir konu seç. Daha sonra her saat başı bu konuyla alakalı bildirimlerin
-gelmeye başlasın!"
+        android:text="@string/welcome_aciklama"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintHorizontal_bias="0.385"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvHello"
-        app:layout_constraintVertical_bias="0.086" />
+        app:layout_constraintVertical_bias="0.119" />
 
     <Button
         android:id="@+id/motivasyonBtn"
         android:layout_width="152dp"
         android:layout_height="62dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="48dp"
         android:text="MOTİVASYON"
+        android:textColor="@color/white"
         app:backgroundTint="#182678"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.123"
@@ -51,11 +51,12 @@ gelmeye başlasın!"
         android:id="@+id/alintiBtn"
         android:layout_width="152dp"
         android:layout_height="62dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="48dp"
         android:text="Kitaplardan Alıntılar"
+        android:textColor="@color/white"
         app:backgroundTint="#182678"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintHorizontal_bias="0.306"
         app:layout_constraintStart_toEndOf="@+id/motivasyonBtn"
         app:layout_constraintTop_toBottomOf="@+id/aciklama" />
 
@@ -66,6 +67,7 @@ gelmeye başlasın!"
         android:layout_marginTop="16dp"
         android:text="Ünlü Düşünürlerden Sözler"
         android:textSize="12dp"
+        android:textColor="@color/white"
         app:backgroundTint="#182678"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.123"
@@ -78,6 +80,7 @@ gelmeye başlasın!"
         android:layout_height="62dp"
         android:layout_marginTop="16dp"
         android:text="Şarkılardan Alıntılar"
+        android:textColor="@color/white"
         app:backgroundTint="#182678"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.293"
@@ -90,6 +93,7 @@ gelmeye başlasın!"
         android:layout_height="62dp"
         android:layout_marginTop="16dp"
         android:text="Burçlar"
+        android:textColor="@color/white"
         app:backgroundTint="#182678"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.123"
@@ -97,11 +101,12 @@ gelmeye başlasın!"
         app:layout_constraintTop_toBottomOf="@+id/dusunurlerBtn" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/ego_btn"
         android:layout_width="152dp"
         android:layout_height="62dp"
         android:layout_marginTop="16dp"
-        android:text="Button"
+        android:text="DEVINIM ile özel hisset"
+        android:textColor="@color/white"
         app:backgroundTint="#182678"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.306"
@@ -109,34 +114,11 @@ gelmeye başlasın!"
         app:layout_constraintTop_toBottomOf="@+id/sarkilarBtn" />
 
     <Button
-        android:id="@+id/button6"
-        android:layout_width="152dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="16dp"
-        android:text="Button"
-        app:backgroundTint="#182678"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/burclarBtn" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="152dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="16dp"
-        android:text="Button"
-        app:backgroundTint="#182678"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.306"
-        app:layout_constraintStart_toEndOf="@+id/button6"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
-
-    <Button
         android:id="@+id/cikisBtn"
         android:layout_width="100dp"
         android:layout_height="54dp"
         android:text="Çıkış Yap"
+        android:textColor="@color/white"
         app:backgroundTint="#182678"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

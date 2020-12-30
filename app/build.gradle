@@ -43,10 +43,13 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
-    // Add the following line
-
+    implementation platform('com.google.firebase:firebase-bom:26.2.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-messaging:18.0.0'
+   // implementation 'com.google.firebase:firebase-admin:7.1.0'
     implementation 'com.huawei.hms:push:5.0.2.300'
     implementation 'com.huawei.hms:hwid:5.0.3.302'
 }
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.huawei.agconnect'

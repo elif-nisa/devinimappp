@@ -1,7 +1,8 @@
 package com.elifnisa.devinimappp;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
+
+import com.google.firebase.messaging.FirebaseMessaging;
+
 import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hmf.tasks.OnCompleteListener;
 import com.huawei.hmf.tasks.Task;
@@ -17,16 +27,18 @@ import com.huawei.hms.aaid.HmsInstanceId;
 import com.huawei.hms.common.ApiException;
 import com.huawei.hms.push.HmsMessaging;
 
+import java.io.IOException;
 import java.security.Policy;
+import java.util.Arrays;
+import java.util.List;
 
 import static com.huawei.hms.aaid.constant.AaidIdConstant.getToken;
 import static java.lang.System.err;
 
-public class motivasyon extends AppCompatActivity implements View.OnClickListener {
+public class motivasyon<options> extends AppCompatActivity implements View.OnClickListener {
     private TextView baslik,aciklamaa;
     private Button motivasyonSecBtn;
     private static final String TAG = "motivasyon";
-    private String motivasyon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,55 +48,18 @@ public class motivasyon extends AppCompatActivity implements View.OnClickListene
         aciklamaa=(TextView) findViewById(R.id.aciklamaa);
         motivasyonSecBtn=(Button) findViewById(R.id.motivasyonSecBtn);
         motivasyonSecBtn.setOnClickListener(this);
-
     }
 
     @Override
     public void onClick(View v) {
-        subscribe(motivasyon);
-
-       if (v.getId()==R.id.motivasyonSecBtn) {
-           Context context = getApplicationContext();
-           CharSequence text = "Motivasyon seçildi!";
-           int duration = Toast.LENGTH_SHORT;
-
-           Toast toast = Toast.makeText(context, text, duration);
-           toast.show();
-       }
-    }
-
-    private void subscribe(String motivasyon) {
-        try {
-
-            HmsMessaging.getInstance(this.getApplicationContext()).subscribe(motivasyon)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                Log.i(TAG, "subscribe Complete");
-
-                            } else {
-                                Log.e(TAG, "subscribe failed: ret=" + task.getException().getMessage());
-                            }
-                        }
-                    });
-        } catch (Exception e) {
-            Log.e(TAG, "subscribe failed: exception=" + e.getMessage());
-        }
-
-        HmsMessaging.getInstance(this.getApplicationContext()).turnOnPush()
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            Log.i(TAG, "turnOnPush Complete");
-                        } else {
-                            Log.e(TAG, "turnOnPush failed: cause=" + task.getException().getMessage());
-                        }
+        FirebaseMessaging.getInstance().subscribeToTopic("motivasyon" )
+                .addOnCompleteListener((com.google.android.gms.tasks.OnCompleteListener<Void>) task -> {
+                    String msg = getString(R.string.msg_subscribed);
+                    if (!task.isSuccessful()) {
+                        msg = getString(R.string.msg_subscribe_failed);
                     }
+                    Log.d(TAG, msg);
+                    Toast.makeText(motivasyon.this, msg, Toast.LENGTH_SHORT).show();
                 });
     }
-
-
 }
-
