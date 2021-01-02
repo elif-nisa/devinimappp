@@ -1,34 +1,33 @@
 package com.elifnisa.devinimappp;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.RelativeLayout;
 
-import com.google.firebase.messaging.FirebaseMessaging;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.huawei.agconnect.auth.AGConnectAuth;
 import com.huawei.agconnect.auth.AGConnectAuthCredential;
 import com.huawei.agconnect.auth.HwIdAuthProvider;
 import com.huawei.agconnect.auth.SignInResult;
-import com.huawei.hmf.tasks.OnCompleteListener;
 import com.huawei.hmf.tasks.OnFailureListener;
 import com.huawei.hmf.tasks.OnSuccessListener;
 import com.huawei.hmf.tasks.Task;
+import com.huawei.hms.ads.AdParam;
+import com.huawei.hms.ads.BannerAdSize;
+import com.huawei.hms.ads.HwAds;
+import com.huawei.hms.ads.banner.BannerView;
 import com.huawei.hms.common.ApiException;
-import com.huawei.hms.hwid.v;
-import com.huawei.hms.push.HmsMessaging;
 import com.huawei.hms.support.hwid.HuaweiIdAuthManager;
 import com.huawei.hms.support.hwid.request.HuaweiIdAuthParams;
 import com.huawei.hms.support.hwid.request.HuaweiIdAuthParamsHelper;
 import com.huawei.hms.support.hwid.result.AuthHuaweiId;
 import com.huawei.hms.support.hwid.service.HuaweiIdAuthService;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText name;
@@ -43,6 +42,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         anonimGirisBtn.setOnClickListener(this::anonimGiris);
         login=(Button) findViewById(R.id.LoginBtn);
         login.setOnClickListener(this);
+
+        // HUAWEI Ads SDK başlatmak için
+        HwAds.init(this);
+
+        // Obtain BannerView based on the configuration in layout/ad_fragment.xml.
+        BannerView bottomBannerView = findViewById(R.id.hw_banner_view);
+        AdParam adParam = new AdParam.Builder().build();
+        bottomBannerView.loadAd(adParam);
+
+        // Call new BannerView(Context context) to create a BannerView class.
+        BannerView topBannerView = new BannerView(this);
+        topBannerView.setAdId("testw6vs28auh3");
+        topBannerView.setBannerAdSize(BannerAdSize.BANNER_SIZE_360_57);
+        topBannerView.loadAd(adParam);
+
+        RelativeLayout rootView = findViewById(R.id.root_view);
+        rootView.addView(topBannerView);
+
     }
 
     private void anonimGiris(View view) {

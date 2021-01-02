@@ -1,44 +1,41 @@
 package com.elifnisa.devinimappp;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.NotificationManager;
-import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.InstanceIdResult;
-
-import com.google.firebase.messaging.FirebaseMessaging;
-
-import com.huawei.agconnect.config.AGConnectServicesConfig;
-import com.huawei.hmf.tasks.OnCompleteListener;
-import com.huawei.hmf.tasks.Task;
-import com.huawei.hms.aaid.HmsInstanceId;
-import com.huawei.hms.common.ApiException;
-import com.huawei.hms.push.HmsMessaging;
-
-import java.io.IOException;
-import java.security.Policy;
-import java.util.Arrays;
-import java.util.List;
-
-import static com.huawei.hms.aaid.constant.AaidIdConstant.getToken;
-import static java.lang.System.err;
-
-public class motivasyon<options> extends AppCompatActivity implements View.OnClickListener {
+public class motivasyon extends AppCompatActivity  {
     private TextView baslik,aciklamaa;
     private Button motivasyonSecBtn;
-    private static final String TAG = "motivasyon";
+   /* private static final String TAG = "motivasyon";
+    private static final String TOPIC = "motivasyon";
+
+    private static final List<String> REG_TOKEN = new ArrayList() {{
+        add("RegTokenOfDeviceOne"); // Pixel Token
+        add("RegTokenOfDeviceTwo"); // Nexus Token
+    }};
+
+    private static void initializeFirebase() throws Exception {
+        String keyPath = "path/to/service_key.json";
+        FileInputStream serviceAccount =
+                new FileInputStream(keyPath);
+
+        FirebaseOptions options = new FirebaseOptions.Builder()
+                .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+               // .setCredentials(GoogleCredentials)
+                .setDatabaseUrl("https://<DATABASE_NAME>.firebaseio.com")
+                .build();
+
+        FirebaseApp firebaseApp = FirebaseApp.initializeApp(options);
+    }
+
+    private void subscribeTopic() throws Exception {
+         TopicManagementResponse response =FirebaseMessaging.getInstance().subscribeToTopic(REG_TOKEN,TOPIC);
+        System.out.println("Subscribed : " + response.getSuccessCount());
+        Toast.makeText(motivasyon.this, R.string.msg_subscribed, Toast.LENGTH_LONG).show();
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,19 +44,20 @@ public class motivasyon<options> extends AppCompatActivity implements View.OnCli
         baslik=(TextView) findViewById(R.id.baslik);
         aciklamaa=(TextView) findViewById(R.id.aciklamaa);
         motivasyonSecBtn=(Button) findViewById(R.id.motivasyonSecBtn);
-        motivasyonSecBtn.setOnClickListener(this);
+        //motivasyonSecBtn.setOnClickListener(this);
     }
-
+/*
     @Override
     public void onClick(View v) {
-        FirebaseMessaging.getInstance().subscribeToTopic("motivasyon" )
-                .addOnCompleteListener((com.google.android.gms.tasks.OnCompleteListener<Void>) task -> {
-                    String msg = getString(R.string.msg_subscribed);
-                    if (!task.isSuccessful()) {
-                        msg = getString(R.string.msg_subscribe_failed);
-                    }
-                    Log.d(TAG, msg);
-                    Toast.makeText(motivasyon.this, msg, Toast.LENGTH_SHORT).show();
-                });
-    }
+       try {
+            initializeFirebase();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            subscribeTopic();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }*/
 }

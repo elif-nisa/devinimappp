@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Devinimappp">
-        <activity android:name=".ego"></activity>
+        <activity android:name=".ego" />
 
         <meta-data
             android:name="push_kit_auto_init_enabled"
@@ -27,19 +27,7 @@
         <activity android:name=".motivasyon" />
         <activity android:name=".welcome" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-
     </application>
-    {
-    "topic": "weather",
-    "tokenArray": [
-    "pushtoken1",
-    "pushtoken2"
-    ]
-    }
+
 </manifest>
