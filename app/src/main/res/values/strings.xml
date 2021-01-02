@@ -13,4 +13,5 @@
     <string name="ego_aciklama">Açıklama </string>
     <string name="msg_subscribed">Seçildi :D</string>
     <string name="msg_subscribe_failed">Üzgünüm, seçilemedi :(</string>
+    <string name="main_activity_aciklama">Devinim, seçtiğiniz konu içeriğinde, günün belirli zamanlarında size tatlı bildirimler göderen bir uygulamadır</string>
 </resources>
