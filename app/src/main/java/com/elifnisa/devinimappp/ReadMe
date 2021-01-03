@@ -1,0 +1,5 @@
+Seçilen konuya göre bildirim göndermek için öncelikle Push Kit kullanmayı denedim fakat çok fazla hata aldım.
+Aldığım hataları düzelttikten sonra hata olmamasına ragmen çalışmadı.
+Çalışmayınca Firebase üzerinden bildirim göndermeyi denedim(motivasyon kısmında yorum satırı olan yerler) fakat 3 tane hata verdi.
+Bu hatalar uygulamamın çalışmasını engellediğinden Firebase kullanmak için kullandığım kodları(motivasyon kısmında ve
+build.gradle dosyasında) yorum satırı haline getirdim.

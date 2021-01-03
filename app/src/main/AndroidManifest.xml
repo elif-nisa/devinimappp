@@ -15,11 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Devinimappp">
         <activity android:name=".ego" />
-
-        <meta-data
-            android:name="push_kit_auto_init_enabled"
-            android:value="true" />
-
         <activity android:name=".burclar" />
         <activity android:name=".sarkilar" />
         <activity android:name=".dusunurler" />
@@ -27,6 +22,11 @@
         <activity android:name=".motivasyon" />
         <activity android:name=".welcome" />
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
