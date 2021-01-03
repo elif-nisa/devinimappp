@@ -82,7 +82,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         HuaweiIdAuthParams mHuaweiIdAuthParams = new HuaweiIdAuthParamsHelper(HuaweiIdAuthParams.DEFAULT_AUTH_REQUEST_PARAM).setAccessToken().createParams();
         HuaweiIdAuthService mHuaweiIdAuthService = HuaweiIdAuthManager.getService(MainActivity.this, mHuaweiIdAuthParams);
         startActivityForResult(mHuaweiIdAuthService.getSignInIntent(), 1001);
-        onStart();
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -93,20 +92,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 AuthHuaweiId huaweiAccount = authHuaweiIdTask.getResult();
                 Log.i(TAG, "signIn success Access Token = " + huaweiAccount.getAccessToken());
                 Log.i(TAG, "signIn success User Name = " + huaweiAccount.getDisplayName());
-                onStart();
             } else {
                 Log.i(TAG, "signIn failed: " + ((ApiException) authHuaweiIdTask.getException()).getStatusCode());
             }
         }
     }
-
-    private void transmitTokenIntoAppGalleryConnect(String accessToken) {
+//Bu metod ile accessTokenı AppGallery Connecte bildiriyoruz. Eğer işlem başarılı olursa kullanıcıyı welcome'a yönlediriyoruz.
+      private void transmitTokenIntoAppGalleryConnect(String accessToken){
         AGConnectAuthCredential credential = HwIdAuthProvider.credentialWithToken(accessToken);
         AGConnectAuth.getInstance().signIn(credential).addOnSuccessListener(new OnSuccessListener<SignInResult>() {
             @Override
             public void onSuccess(SignInResult signInResult) {
                 startActivity(new Intent(MainActivity.this, welcome.class));
-                onStart();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

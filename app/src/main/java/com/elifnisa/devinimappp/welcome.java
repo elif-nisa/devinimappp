@@ -1,13 +1,18 @@
 package com.elifnisa.devinimappp;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.huawei.agconnect.auth.AGConnectAuth;
+import com.huawei.hms.ads.AdParam;
+import com.huawei.hms.ads.BannerAdSize;
+import com.huawei.hms.ads.HwAds;
+import com.huawei.hms.ads.banner.BannerView;
 
 public class welcome extends AppCompatActivity implements View.OnClickListener {
    private TextView tvHello,tvName,aciklama;
@@ -18,6 +23,22 @@ public class welcome extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+        // HUAWEI Ads SDK başlatmak için
+        HwAds.init(this);
+
+        // Obtain BannerView based on the configuration in layout/ad_fragment.xml.
+        BannerView bottomBannerView = findViewById(R.id.hw_banner_view);
+        AdParam adParam = new AdParam.Builder().build();
+        bottomBannerView.loadAd(adParam);
+
+        // Call new BannerView(Context context) to create a BannerView class.
+        BannerView topBannerView = new BannerView(this);
+        topBannerView.setAdId("testw6vs28auh3");
+        topBannerView.setBannerAdSize(BannerAdSize.BANNER_SIZE_360_57);
+        topBannerView.loadAd(adParam);
+
+        RelativeLayout rootView = findViewById(R.id.root_view);
+        rootView.addView(topBannerView);
 
         motivasyonBtn=(Button) findViewById(R.id.motivasyonBtn);
         motivasyonBtn.setOnClickListener(this);
@@ -42,10 +63,6 @@ public class welcome extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void onClickSixth(View view) {
-        goToEgo();
-    }
-
-    private void goToEgo() {
         Intent intent = new Intent(this, ego.class);
         startActivity(intent);
     }
@@ -63,32 +80,19 @@ public class welcome extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void onClickSecond(View view) {
-    goToAlinti();
-    }
-
-    private void goToAlinti() {
         Intent intent = new Intent(this, alinti.class);
         startActivity(intent);
     }
 
     private void onClickThird(View view) {
-        goToDusunurler();
-    }
-
-    private void goToDusunurler() {
         Intent intent = new Intent(this, dusunurler.class);
         startActivity(intent);
     }
 
     private void onClickFourth(View view) {
-        goToSarkilar();
-    }
-
-    private void goToSarkilar() {
         Intent intent = new Intent(this, sarkilar.class);
         startActivity(intent);
     }
-
     private void onClickFifth(View view) {
         goToBurclar();
     }
